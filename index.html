@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <title>SVG 编码工具</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>SVG 编码工具</h1>
+        <ul class="langs">
+          <li class="langs__item">
+            <a class="langs__link langs__link--current">中文</a>
+          </li>
+          <li class="langs__item">
+            <a class="langs__link" href="./en/index.html">En</a>
+          </li>
+        </ul>
+      </header>
+
+      <main>
+        <div class="panel">
+
+          <div class="options">
+              外引号：
+              <label class="options__label">
+                <input
+                  type="radio"
+                  value="single"
+                  name="quotes"
+                  class="options__input visuallyhidden"
+                >
+                <span class="options__text">单引号</span>
+              </label>
+
+              <span class="options__middle-word">/</span>
+
+              <label class="options__label">
+                <input
+                  type="radio"
+                  value="double"
+                  name="quotes"
+                  class="options__input visuallyhidden"
+                  checked
+                >
+                <span class="options__text">双引号</span>
+              </label>
+          </div>
+
+
+          <dl class="about">
+            <dt class="expander">关于</dt>
+            <dd class="expanded hidden">
+              <p>我们可以在 CSS 中通过 data URI 使用 svg，但是如果不给它编码，只能用在 Webkit 内核的浏览器中。如果用 <code>encodeURIComponent()</code> 编码，就可以在各浏览器中使用了。</pw>
+
+              <p>SVG 必须有 <strong>xmlns</strong> 属性，比如：<code>xmlns='http://www.w3.org/2000/svg'</code>。如果没有，这个属性会被自动添加。</p>
+
+              <p>编码后的 svg 可用于<code>background</code> 或 <code>border-image</code>。</p>
+            </dd>
+          </dl>
+        </div>
+
+        <div class="containers">
+          <div class="container container--left container container--init">
+              <h4>粘贴你的 SVG 代码：</h4>
+              <button class="button-example">示例</button>
+              <textarea
+                name="init"
+                id="init"
+                spellcheck="false"
+                ></textarea>
+          </div>
+
+          <div class="container container--right container container--result">
+            <h4>编码结果：</h4>
+            <textarea
+              name="result"
+              id="result"
+              spellcheck="false"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="containers">
+          <div class="container container--left container container--result-css">
+            <h4>用于 CSS：</h4>
+            <textarea
+              name="result-css"
+              id="result-css"
+              spellcheck="false"
+            ></textarea>
+          </div>
+
+          <div class="container container--right container container--demo">
+            <h4>预览：</h4>
+
+            <div class="contrast-buttons">背景色：
+              <button
+                type="button"
+                class="contrast-button contrast-button--white"
+                data-color="white"
+                title="White">
+                <span class="visuallyhidden">White</span>
+              </button>
+              <button
+                type="button"
+                class="contrast-button contrast-button--silver"
+                data-color="silver"
+                title="Silver">
+                <span class="visuallyhidden">Silver</span>
+              </button>
+              <button
+                type="button"
+                class="contrast-button contrast-button--black"
+                data-color="black"
+                title="Black">
+                <span class="visuallyhidden">Black</span>
+              </button>
+            </div>
+
+            <div class="demo-wrapper">
+              <div id="demo" class="demo"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <a href="https://github.com/ChuanfengZhang/url-encoder-for-svg">Project on GitHub</a>
+      </footer>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
